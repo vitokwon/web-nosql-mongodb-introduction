@@ -38,13 +38,13 @@ Movies{
  - NoSQL 데이터베이스 구성이 편리하지만 복잡해질 수 있음
 
 ## 몽고DB 설치 및 일반 설정
- 1) 몽고DB 다운로드
+ ### 1) 몽고DB 다운로드
     - Community Server(free version)
     - Enterpirse Server(기업용 추가 구성, 보안 기능)
     - Compass(GUI)
- 2) 몽고DB Docs - Server
+ ### 2) 몽고DB Docs - Server
     - 일반적인 몽고DB 기능 조회
- 3) 몽고DB 설치
+ ### 3) 몽고DB 설치
 - Community server, windows, msi package 다운로드
 - installer 실행
 - custom installation - 'Server', 'Client'
@@ -55,12 +55,12 @@ Movies{
 - 'MongoDB 설치 경로' - 'bin 폴더' - 'mongo.exe' - 셸 실행 및 서버 연결
 - 'show dbs' - 데이터베이스 확인
 
- 4) 몽고DB 셸 설치
+ ### 4) 몽고DB 셸 설치
 - 'mongodb shell' 구글검색 - 최신 셸 버전 설치 ('mongosh.exe' 최신버전)
 - 'MongoDB Shell Download | MongoDB'로 이동 - '다운로드'
 - '기본경로'로 설치 - '윈도우 검색 mongosh 실행
 
- 5) 몽고DB 데이터 삽입
+ ### 5) 몽고DB 데이터 삽입
 - 'mongosh' - 'show dbs'
 - 사전 정의된 고정된 데이터 유형 구조 설정은 필요 없음
 - 'use ratingportal' 새로운 데이터 베이스 생성 및 전환
@@ -68,7 +68,7 @@ Movies{
 - 삽입되는 모든 문서에 대해 고유한 ID를 자동 생성
 - 'db.restaurants.insertOne({ name: "Burger House", address: { street: "Another Street", streetNumber: "15" } })'
 
- 6) 몽고DB 데이터 읽기 & 필터링
+### 6) 몽고DB 데이터 읽기 & 필터링
 - 'db.restaurants.find()' 모든 데이터를 조회
 - 'db.restaurants.find({ name: "Munich Schnitzelhouse"  }) 해당하는 값만 조회
 - 'db.restaurants.find({}, {name: 1})' id, name 필드만 조회
@@ -76,19 +76,19 @@ Movies{
 - '첫번쨰 필드{}'는 조건 정의, '두번째 필드{}'는 표시할 필드값.
 - 'db.restaurants.findOne({ name: "Munich Schnitzelhouse"  })' 조건을 충족하는 첫번째 일치 문서 조회
 
- 7) 몽고DB 문서 업데이트
+### 7) 몽고DB 문서 업데이트
 - 'db.restaurants.updateOne({_id: ObjectId("...")}, {$set: { "address.street": "Some Street" }})'
 - 'db.restaurants.find() 업데이트 확인
 
- 8) 몽고DB 문서 삭제
+### 8) 몽고DB 문서 삭제
 - 'db.restaurants.deleteOne({_id: ObjectId("...")}) 해당 id 데이터 삭제
 - 'db.restaurants.find() 삭제 확인
 
- 9) 완전한 데이터베이스 디자인/레이아웃 계획
+### 9) 완전한 데이터베이스 디자인/레이아웃 계획
 - SQL : 4개의 테이블, 각 테이블 ID, 관계 형성
 - NoSQL : 실행하려는 쿼리 계획
 
- 10) 계획된 디자인 & 레이아웃 구현
+### 10) 계획된 디자인 & 레이아웃 구현
 - 'db.restaurants.deleteMnay({}) 모든 문서를 삭제
 - 'db.types.insertOne({ name : "German" })
 - 'db.types.insertOne({ name : "Italian" })
@@ -102,7 +102,7 @@ Movies{
 - 'mongodatabase data' 구글검색 - 공식문서에서 사용법 확인 (JavaScript와 유사함)
 - db.reviews.find() reviews DB 조회
 
- 11) 기타 필터링 연산자
+### 11) 기타 필터링 연산자
 - 'db.reviews.insertOne({ reviewer: { fistName: "Max", lastName: "kwon" }, rating: 5, text: "This was amazing!", date: new Data("2021-09-10"), restaurant: { id: ObjectId("..."), name: "Barlin Burgerhouse" }})
 - 'db.reviews.find({rating:5})'
 - 'db.reviews.find({rating: {$gt: 4 }})' >4
